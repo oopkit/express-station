@@ -1,0 +1,11 @@
+{
+  "apps" : [{
+    "name"        : "node-oa",
+    "script"      : "index.js",
+    "watch"       : true,
+    "cwd"         : "/code/project/oa",
+    "nodeArgs"    : [
+        "port=1212"
+    ]
+  }]
+}
