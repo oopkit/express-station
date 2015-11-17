@@ -1,0 +1,39 @@
+<aside class="aside theme-asd-bg">
+	<ul class="aside-nav theme-clr">                          
+        <li class="theme-act-bg theme-act-subbg">
+        	<h4><i class="iconfont nav-img">&#xe601;</i>五行行星<i class="iconfont nav-hint">&#xe600;</i></h4>
+        	<blockquote>
+        		<a href="/venus.html">太阳系金星</a>
+                <a href="/jupiter.html">太阳系木星</a>
+                <a href="/mercury.html">太阳系水星</a>
+                <a href="/mars.html">太阳系火星</a>
+                <a href="/saturn.html">太阳系土星</a>
+        	</blockquote>
+        </li>  
+        <li class="theme-act-bg theme-act-subbg">
+        	<h4><i class="iconfont nav-img">&#xe601;</i>三三行星<i class="iconfont nav-hint">&#xe600;</i></h4>
+        	<blockquote>
+        		<a href="/earth.html">太阳系地球</a>
+        		<a href="/uranus.html">太阳系天王星</a>
+                <a href="/pluto.html">太阳系冥王星</a>
+        	</blockquote>
+        </li>  
+        <li class="theme-act-bg theme-act-subbg">
+        	<h4><i class="iconfont nav-img">&#xe601;</i>系统管理<i class="iconfont nav-hint">&#xe600;</i></h4>
+        	<blockquote>
+        		<a href="/backup.html">备份还原</a>
+        		<a href="/data.html">数据优化</a>
+        	</blockquote>
+        </li>
+    </ul>   
+</aside>
+<script>
+    $(".aside-nav li h4").on("click", function(){
+        var $li = $(this).parents("li");
+    	if( $li.hasClass("active") ){
+    		$li.removeClass("active");
+    	} else {
+    		$li.addClass("active").siblings("li").removeClass("active");
+    	}
+    });
+</script>

@@ -6,104 +6,11 @@
 		<%- include('ejs/head_script.html')%>
 	</head>
 	<body>
-		<h1>welcome my home</h1>
-		<hr/>
-		<section>
-			<div>
-				<h3>restful api: query: get</h3>
-				<blockquote>
-					<input type="text" value="" placeholder="please input your name" id="JS_input_1" />
-					<a href="/api/user?name=test" target="_blank" id="JS_a_1">start</a>
-				</blockquote>
-			</div>
-			<div>
-				<h3>jquery: restful api: query: get</h3>
-				<blockquote>
-					<input type="text" value="" placeholder="please input your name" id="JS_input_2" />
-					<a href="javascript:void(0);" target="_blank" id="JS_a_2">console</a>
-				</blockquote>
-			</div>
-			<div>
-				<h3>jquery: restful api: query: post</h3>
-				<blockquote>
-					<input type="text" value="" placeholder="please input your name" id="JS_input_3" />
-					<a href="javascript:void(0);" target="_blank" id="JS_a_3">console</a>
-				</blockquote>
-			</div>
-			<div>
-				<h3>jquery: restful api: cross: query: get</h3>
-				<blockquote>
-					<input type="text" value="Access-Control-Allow-Origin" placeholder="please input your name" id="JS_input_4" />
-					<a href="javascript:void(0);" target="_blank" id="JS_a_4">console</a>
-				</blockquote>
-			</div>
-			<div>
-				<h3>url: uid: must be Number</h3>
-				<blockquote>
-					<input type="text" value="1" placeholder="please input your uid" id="JS_input_5" />
-					<a href="javascript:void(0);" target="_blank" id="JS_a_5">console</a>
-				</blockquote>
-			</div>
-		</section>
-		<hr/>
-		<div class="hint">button: console: The results are output to the console, please open the console view.</div>
-		<script src="/common/js/jquery.min.js"></script>
-		<script>
-			document.querySelector("#JS_input_1").addEventListener("change", function(){
-				document.querySelector("#JS_a_1").setAttribute("href", "/api/user?name=" + this.value);
-			}, false);
-
-			$("#JS_a_2").on("click", function(){
-				$.ajax({
-					type: "get",
-					url: "/api/user",
-					data: {
-						name: $("#JS_input_2").val()
-					},
-					success: function(data){
-						console.log(data);
-					},
-					error: function(data){
-						console.log(data);
-					}
-				});
-			});
-
-			$("#JS_a_3").on("click", function(){
-				$.ajax({
-					type: "post",
-					url: "/api/user",
-					data: {
-						name: $("#JS_input_3").val()
-					},
-					success: function(data){
-						console.log(data);
-					},
-					error: function(data){
-						console.log(data);
-					}
-				});
-			});
-
-			$("#JS_a_4").on("click", function(){
-				$.ajax({
-					type: "get",
-					url: "/api/cross",
-					data: {
-						name: $("#JS_input_4").val()
-					},
-					success: function(data){
-						console.log(data);
-					},
-					error: function(data){
-						console.log(data);
-					}
-				});
-			});
-
-			$("#JS_a_5").on("click", function(){
-				window.open('/user/' + $("#JS_input_5").val() );
-			});
-		</script>
+		<%- include('ejs/body_header.html')%>
+		<section class="section">
+	        <%- include('ejs/body_aside.html')%>
+	        <div class="wrap"><%-body%></div>
+	    </section>
+	    <%- include('ejs/body_footer.html')%>
 	</body>
 </html>
