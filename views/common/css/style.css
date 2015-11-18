@@ -55,5 +55,41 @@ body > section > code {
 }
 /* 长长的样式链真好玩 */
 
+/* socket */
+.socket {
 
-
+}
+.socket:after {
+	clear: both;
+	display: table;
+	visibility: hidden;
+	content: '';
+}
+.socket li {
+	width: 50%;
+	list-style: none;
+	float: left;
+}
+.socket h3 {
+	text-align: center;
+	line-height: 30px;
+	border-bottom: 1px solid #eee;
+}
+.input-name {
+	float: left;
+	border: 0;
+	text-indent: 5px;
+	border-right: 1px solid #eee;
+	height: 29px;
+}
+.input-box {
+	height: 30px;
+	line-height: 30px;
+}
+.input-msg {
+	width: 650px;
+	float: left;
+	border: 0;
+	height: 29px;
+	text-indent: 5px;
+}

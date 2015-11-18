@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<%- include('ejs/head_meta.html')%>
+		<title>title</title>
+		<%- include('ejs/head_script.html')%>
+	</head>
+	<body>
+		<section>
+			<div>
+				sadfaf
+			</div>
+			<div class="input-box">
+				<input type="text" class="input-name" value="无名氏" />
+				<input type="text" class="input-msg" placeholder="你想说什么" >
+			</div>
+		</section>
+		<script src="/common/js/jquery.min.js"></script>
+		<script>
+			$(".input-msg").on('keyup', function(e){
+				if( e.keyCode == 13 ){
+					
+				}
+			});
+		</script>
+	</body>
+</html>
