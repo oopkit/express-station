@@ -13,4 +13,14 @@ module.exports = function(app){
 		res.render('socket', {
 		});
 	});
+
+	app.get('/multiplexing', function(req, res){
+		res.render('multiplexing', {
+		});
+	});
+
+	app.get('/multiplexing/statistics', function(req, res){
+		res.render('multiplexing_statistics', {
+		});
+	});
 }
