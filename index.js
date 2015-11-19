@@ -15,12 +15,13 @@ app.engine('html', ejs.__express);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// 扩展req.params
 params.extend(app);
+// 页面路由
 routes(app);
+// 静态路径
 app.use('/common', express.static(__dirname + '/views/common'));
+var server = app.listen(app.get('port'));
+socket(server);
 
-
-var server = app.listen(app.get('port'), function(){
-	console.log('listen to ' + app.get('port'));
-	socket(server);
-});
+console.log("listen to " + app.get('port'));

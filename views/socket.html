@@ -4,11 +4,19 @@
 		<%- include('ejs/head_meta.html')%>
 		<title>title</title>
 		<%- include('ejs/head_script.html')%>
+		<script src="/common/js/socket.io.js"></script>
+		<style>
+			html, body {
+				height: 100%;
+			}
+			section {
+				height: 100%;
+			}
+		</style>
 	</head>
 	<body>
-		<section>
-			<div>
-				sadfaf
+		<section class="socket-section">
+			<div class="socket-msg">
 			</div>
 			<div class="input-box">
 				<input type="text" class="input-name" value="无名氏" />
@@ -17,9 +25,21 @@
 		</section>
 		<script src="/common/js/jquery.min.js"></script>
 		<script>
+			var socket = io('http://192.168.1.2:1212');
+			socket.on("msg-get", function(html){
+				$(".socket-msg").append(html);
+			});
 			$(".input-msg").on('keyup', function(e){
 				if( e.keyCode == 13 ){
-					
+					var name = $(".input-name").val();
+					var val = $(".input-msg").val();
+					if( !val ){
+						return false;
+					}
+					var html = '<div class="record">' + name + ": " + val + '</div>';
+					$(".socket-msg").append(html);
+					socket.emit("msg-send", html );
+					$(".input-msg").val("");
 				}
 			});
 		</script>

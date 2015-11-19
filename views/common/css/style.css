@@ -82,12 +82,34 @@ body > section > code {
 	border-right: 1px solid #eee;
 	height: 29px;
 }
+.socket-section {
+	position: relative;
+	height: 100%;
+}
+.socket-msg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: -30px;
+	overflow: scroll;
+	border: 0;
+	height: 100%;
+}
+.record {
+	text-indent: 5px;
+}
 .input-box {
-	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	line-height: 30px;
+	height: 30px;
+	border-top: 1px solid #eee;
 }
 .input-msg {
-	width: 650px;
+	width: 600px;
 	float: left;
 	border: 0;
 	height: 29px;
