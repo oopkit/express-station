@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<%- include('ejs/head_meta.html')%>
+		<title>title</title>
+		<%- include('ejs/head_script.html')%>
+		<script src="/common/js/socket.io.js"></script>
+		<style>
+			html, body {
+				height: 100%;
+			}
+			section {
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<section class="socket-section">
+			<div class="socket-msg">
+			</div>
+		</section>
+		<script src="/common/js/jquery.min.js"></script>
+		<script>
+			var statistics = io('http://192.168.1.2:1212/statistics');
+			statistics.on("get", function(data){
+				$(".socket-msg").append(data.date + " " + data.html);
+			});
+		</script>
+	</body>
+</html>
