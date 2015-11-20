@@ -26,4 +26,19 @@ module.exports = function(app){
 			body: root + '/views/page/' + req.params.page + '.html'
 		});
 	});
+
+	app.get('/socket', function(req, res){
+		res.render('socket', {
+		});
+	});
+
+	app.get('/multiplexing', function(req, res){
+		res.render('multiplexing', {
+		});
+	});
+
+	app.get('/multiplexing/statistics', function(req, res){
+		res.render('multiplexing_statistics', {
+		});
+	});
 }

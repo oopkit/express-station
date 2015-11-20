@@ -69,5 +69,63 @@ textarea, select, input, .uneditable-input { background-color: #ffffff; border: 
 
 
 
+/* socket */
+.socket {
 
-
+}
+.socket:after {
+	clear: both;
+	display: table;
+	visibility: hidden;
+	content: '';
+}
+.socket li {
+	width: 50%;
+	list-style: none;
+	float: left;
+}
+.socket h3 {
+	text-align: center;
+	line-height: 30px;
+	border-bottom: 1px solid #eee;
+}
+.input-name {
+	float: left;
+	border: 0;
+	text-indent: 5px;
+	border-right: 1px solid #eee;
+	height: 29px;
+}
+.socket-section {
+	position: relative;
+	height: 100%;
+}
+.socket-msg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: -30px;
+	overflow: scroll;
+	border: 0;
+	height: 100%;
+}
+.record {
+	text-indent: 5px;
+}
+.input-box {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	line-height: 30px;
+	height: 30px;
+	border-top: 1px solid #eee;
+}
+.input-msg {
+	width: 600px;
+	float: left;
+	border: 0;
+	height: 29px;
+	text-indent: 5px;
+}
