@@ -7,7 +7,10 @@ module.exports = function(app){
 			layoutUrls: res.layouts,
 			test: 'testtset'
 		});
-		return false;
-		res.send('home page');
+	});
+
+	app.get('/wechat', function(req, res){
+		res.render('wechat', {
+		});
 	});
 }

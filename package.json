@@ -7,7 +7,8 @@
     "body-parser": "^1.14.1",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
-    "express-params": "0.0.3"
+    "express-params": "0.0.3",
+    "wechat-enterprise-api": "^0.2.0"
   },
   "devDependencies": {},
   "scripts": {
