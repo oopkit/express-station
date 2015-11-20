@@ -10,7 +10,7 @@ module.exports = function(app){
 	});
 
 	app.get('/wechat', function(req, res){
-		res.render('wechat', {
+		res.render('page/wechat/wechat', {
 		});
 	});
 

@@ -6,6 +6,7 @@
 	"corp": {
 		"corpid": "",
 		"secret": "",
-		"appid": ""
+		"appid": "",
+		"proxy": ""
 	}
 }

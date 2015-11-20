@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<%- include('../../ejs/head_meta.html')%>
+		<title>title</title>
+		<%- include('../../ejs/head_script.html')%>
+		<script src='/common/js/socket.io.js'></script>
+		<style>
+			html, body {
+				height: 100%;
+			}
+			section {
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<section class='socket-section'>
+			<img src='' alt=''>
+		</section>
+		<script src='/common/js/jquery.min.js'></script>
+		<script>
+			var chat = io('http://192.168.1.2:1212/chat');
+			var statistics = io('http://192.168.1.2:1212/statistics');
+			// chat.on('yy', function(html){
+				
+			// });
+			
+			$.ajax({
+				url: '/api/wechat/ticket',
+				type: 'get',
+				data: {},
+				success: function(data){
+					var u = window.location.href;
+					u = !!data.data.proxy ? (data.data.proxy + '?redirect_uri=' + encodeURIComponent(u)) : u;
+					u = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + data.data.appid + '&redirect_uri=' + encodeURIComponent(u) + '&response_type=code&scope=snsapi_userinfo&state=123&connect_redirect=1#wechat_redirect';
+					console.log( u );
+					$('img').attr('src', 'http://qr.liantu.com/api.php?text=' + u);
+				}
+			});
+		</script>
+	</body>
+</html>
