@@ -29,7 +29,7 @@
 	</head>
 	<body>
 		<div class='wechat-container'>
-			<div class="hint">扫描完后将会在此页面获取授权code</div>
+			<div class="hint">扫描完后将会获取你在微信企业中的信息（前提是你已经关注微信企业号）</div>
 			<img class='qrcode' src='' alt=''>
 			<p class='wechat-info' id='JS_params'></p>
 		</div>
@@ -88,16 +88,6 @@
 			
 			if( !!code ){
 				$('.hint').hide();
-				var data = {
-					code: getParam("code"),
-					state: getParam("state"),
-					url: window.location.href,
-					ua: getUAVersion(navigator.userAgent),
-					time: getParam('t')
-				};
-				var result = '<br/>model: '+data.ua.model+'<br/>code: '+data.code+'<br/>state: '+data.state+'<br/>url: '+data.url;
-				document.querySelector("#JS_params").innerHTML = document.querySelector("#JS_params").innerHTML+result+"<hr>";
-				oauth.emit("send", data);
 
 			} else {
 				$.ajax({

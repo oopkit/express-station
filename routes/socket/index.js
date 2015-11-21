@@ -32,4 +32,11 @@ module.exports = function(server){
 						console.log('statistics disconnect');
 					});
 				});
+	var oauthWechat = io.of('/oauth/wechat')
+						.on('connection', function(client){
+							client.on('send', function(xx){
+								xx.host = client.handshake.address.replace("::ffff", "");
+								client.broadcast.emit('get', xx);
+							});
+						});
 }

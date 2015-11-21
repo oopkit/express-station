@@ -14,6 +14,11 @@ module.exports = function(app){
 		});
 	});
 
+	app.get('/wechat/user', function(req, res){
+		res.render('page/wechat/wechat_user', {
+		});
+	});
+
 	app.get('/socket', function(req, res){
 		res.render('socket', {
 		});
