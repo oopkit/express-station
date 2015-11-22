@@ -78,17 +78,32 @@
 			var oauth = io('http://192.168.1.2:1212/oauth/wechat');
 			var codeArr = [];
 			var time = new Date().getTime();
+			var showUserInfo = function(data){
+				var html = '';
+				for(var i in data){
+					html += '<br/>' + i + ': ' + data[i];
+				}
+				document.querySelector("#JS_params").innerHTML = document.querySelector("#JS_params").innerHTML+html+"<hr>";
+			}
 			oauth.on('get', function(data){
-				if( !!codeArr[data.code] ) return false;
-				if( data.time != time ) return false;
-				var result = '<br/>model: '+data.ua.model+'<br/>code: '+data.code+'<br/>state: '+data.state+'<br/>url: '+data.url;
-				document.querySelector("#JS_params").innerHTML = document.querySelector("#JS_params").innerHTML+result+"<hr>";
-				codeArr[data.code] = data;
+				console.log(data);
+				showUserInfo(!!data.data ? data.data : data.error_message);
 			});
 			
 			if( !!code ){
 				$('.hint').hide();
-
+				$.ajax({
+					url: '/api/wechat/user',
+					type: 'get',
+					data: {
+						code: code
+					},
+					success: function(data){
+				        console.log(data);
+				        showUserInfo(!!data.data ? data.data : data.error_message);
+				        oauth.emit('send', data);
+					}
+				});
 			} else {
 				$.ajax({
 					url: '/api/wechat/ticket',

@@ -14,4 +14,39 @@ module.exports = function(app){
 			}
 		})
 	})
+
+	app.get('/api/wechat/user', function(req, res){
+		corp.getUserIdByCode(req.query.code, function(err, data){
+			console.log( err, data );
+			var uid = '';
+			if( !!err ){
+				res.send({
+					code: 1008,
+					error_message: err
+				})
+				return false;
+			} else {
+				uid = data;
+				corp.getUser(data.UserId, function(err, data){
+					if( !!err ){
+						res.send({
+							code: 1008,
+							error_message: err
+						})
+						return false;
+					}
+					data.code = req.query.code;
+					data.UserId = uid.UserId;
+					data.DeviceId = uid.DeviceId;
+					res.send({
+						error_code: 0,
+						data: data
+					});
+				});
+			}
+			
+		});
+		
+		
+	})
 }
