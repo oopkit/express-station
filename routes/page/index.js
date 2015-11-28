@@ -9,7 +9,11 @@ module.exports = function(app){
 				var body = params.body.match(/[^/]*\.html$/);
 				body = !!body ? body[0] : params.body;
 				params.body = !!err ? body + ' not found' : data;
-				res._render(path, params);
+				try{
+					res._render(path, params);
+				} catch(err){
+					res.send('page not found');
+				}
 			});
 		}
 		next();
@@ -27,13 +31,21 @@ module.exports = function(app){
 		});
 	});
 
+	app.get('/single/:page.html', function(req, res){
+		res.render('single', {
+			body: root + '/views/page/' + req.params.page + '.html'
+		});
+	});
+
 	app.get('/wechat', function(req, res){
 		res.render('page/wechat/wechat', {
+			body: root + '/views/page/wechat/wechat.html'
 		});
 	});
 
 	app.get('/wechat/user', function(req, res){
 		res.render('page/wechat/wechat_user', {
+			body: root + '/views/page/wechat/wechat_user.html'
 		});
 	});
 
