@@ -5,7 +5,7 @@
     "watch"       : true,
     "cwd"         : "/code/oopkit/express-station",
     "nodeArgs"    : [
-        "port=1212"
+        "port=1313"
     ]
   }]
 }

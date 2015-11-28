@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<%- include('ejs/head_meta.html')%>
-		<title>title</title>
+		<title><%= title%></title>
 		<%- include('ejs/head_script.html')%>
 	</head>
 	<body>
@@ -47,7 +47,6 @@
 		</section>
 		<hr/>
 		<div class="hint">button: console: The results are output to the console, please open the console view.</div>
-		<script src="/common/js/jquery.min.js"></script>
 		<script>
 			document.querySelector("#JS_input_1").addEventListener("change", function(){
 				document.querySelector("#JS_a_1").setAttribute("href", "/api/user?name=" + this.value);

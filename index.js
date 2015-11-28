@@ -16,11 +16,10 @@ app.use(favicon(__dirname + '/favicon.ico'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-
 params.extend(app);
 routes(app);
-app.use('/common', express.static(__dirname + '/views/common'));
-
+// 路由不到地址自动切换到statics目录查找静态文件, 暂不考虑其他问题
+app.use('/', express.static(__dirname + '/statics'));
 
 app.listen(app.get('port'), function(){
 	console.log('listen to ' + app.get('port'));
