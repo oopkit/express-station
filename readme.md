@@ -15,6 +15,7 @@
 + branch: base
 	+ 底层服务器及基本的模板架构
 	+ restful api
+	+ 静态文件目录，支持seajs，自带jquery
 	+ 测试展示：http://127.0.0.1:1212
 + branch: station
 	+ 后台界面模板
