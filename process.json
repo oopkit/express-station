@@ -1,11 +1,11 @@
 {
   "apps" : [{
-    "name"        : "node-oa",
+    "name"        : "express-station",
     "script"      : "index.js",
     "watch"       : true,
-    "cwd"         : "/code/project/oa",
+    "cwd"         : "/code/oopkit/express-station",
     "nodeArgs"    : [
-        "port=1212"
+        "port=1313"
     ]
   }]
 }

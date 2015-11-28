@@ -25,6 +25,7 @@ module.exports = function(app){
 				var body = params.body.match(/[^/]*\.html$/);
 				body = !!body ? body[0] : params.body;
 				params.body = !!err ? body + ' not found' : data;
+				params.title = params.title || '';
 				res._render(path, params);
 			});
 		}
@@ -39,7 +40,8 @@ module.exports = function(app){
 
 	app.get('/:page', function(req, res){
 		res.render('index', {
-			body: root + '/views/page/' + req.params.page + '.html'
+			body: root + '/views/page/' + req.params.page + '.html',
+			title: '首页'
 		});
 	});
 }

@@ -28,12 +28,14 @@
     </ul>   
 </aside>
 <script>
-    $(".aside-nav li h4").on("click", function(){
-        var $li = $(this).parents("li");
-    	if( $li.hasClass("active") ){
-    		$li.removeClass("active");
-    	} else {
-    		$li.addClass("active").siblings("li").removeClass("active");
-    	}
+    seajs.use(["jquery"], function($){
+        $(".aside-nav li h4").on("click", function(){
+            var $li = $(this).parents("li");
+        	if( $li.hasClass("active") ){
+        		$li.removeClass("active");
+        	} else {
+        		$li.addClass("active").siblings("li").removeClass("active");
+        	}
+        });
     });
 </script>
