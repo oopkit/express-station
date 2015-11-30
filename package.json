@@ -5,9 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "connect-mongo": "^0.8.2",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "express-params": "0.0.3",
+    "express-session": "^1.12.1",
+    "mongoose": "^4.2.8",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {},
