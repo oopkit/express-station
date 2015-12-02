@@ -15,6 +15,7 @@
 + branch: base
 	+ 底层服务器及基本的模板架构
 	+ restful api
+		+ /short/url?url=http://baidu.com 短链接api
 	+ 静态文件目录，支持seajs，自带jquery
 	+ 测试展示：http://127.0.0.1:1212
 + branch: station
@@ -46,17 +47,20 @@
 	+ socket通信服务
 + wechat-enterprise-api
 	+ 微信企业api
++ hashids
+	+ 随机字符串
 
-## DiCtelog
+## Catalog
 + config 应用程序配置目录
 	+ conf.json 应用程序配置文件
 	＋ conf_default.json 应用程序默认配置文件(新建时请将conf\_default.json文件copy一份成conf.json文件)
 + routes 路由文件目录
 	+ api 一般存放restful api文件目录
 	+ page 一般存放定制url路径文件目录
+	+ socket 一般存放socket相关文件目录
 	+ wechat 一般存放微信相关api目录
++ statiscs 静态文件目录
 + views 视图模板目录
-	+ common 静态文件目录
 	+ ejs 模板文件目录
 	+ page 实际url路径文件目录
 + .gitignore git忽略文件

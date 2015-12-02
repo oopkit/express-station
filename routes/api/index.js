@@ -1,5 +1,7 @@
 'use strict';
+var shorturl = require('./short_url');
 module.exports = function(app){
+	shorturl(app);
 	app.get('/api/user', function(req, res){
 		res.send({
 			status: 0,
