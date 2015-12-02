@@ -75,7 +75,7 @@
 			}
 			var code = getParam('code');
 			var state = getParam('state');
-			var oauth = io('http://192.168.1.2:1212/oauth/wechat');
+			var oauth = io(window.location.origin + '/oauth/wechat');
 			var codeArr = [];
 			var time = new Date().getTime();
 			oauth.on('get', function(data){
